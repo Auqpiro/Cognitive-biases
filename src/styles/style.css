@@ -44,12 +44,15 @@ h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 h1 {
   font-size: 72px;
 }
+
 h2 {
   font-size: 60px;
 }
+
 h3 {
   font-size: 34px;
 }
@@ -61,6 +64,7 @@ section {
   justify-content: center;
   position: relative;
 }
+
 section::before {
   content: "";
   position: absolute;
@@ -74,9 +78,11 @@ section::before {
   opacity: 0.1;
   z-index: -200;
 }
+
 section.video-section::before {
   background: var(--white);
 }
+
 #navigation::before {
   background: var(--dark-primary);
   opacity: 1;
@@ -94,6 +100,7 @@ section.video-section::before {
   position: relative;
   margin-bottom: 185px;
 }
+
 .header img {
   position: absolute;
   height: 525px;
@@ -106,9 +113,11 @@ section.video-section::before {
   column-count: 2;
   column-gap: 30px;
 }
+
 .column .text {
   margin-top: 0;
 }
+
 .column-side {
   break-inside: avoid;
 }
@@ -134,6 +143,7 @@ a {
 .video-section {
   text-align: center;
 }
+
 .video-section .text {
   margin-top: 27px;
   margin-bottom: 30px;
@@ -144,6 +154,7 @@ a {
   width: 100%;
   height: 369px;
 }
+
 .video {
   position: absolute;
   transform: translateX(-50%);
@@ -153,8 +164,7 @@ a {
 #navigation .container {
   margin-top: 100px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
@@ -176,13 +186,60 @@ a {
   width: 350px;
   margin-bottom: 20px;
 }
+
 .card:not(:first-child) {
   padding: 24px;
   background: var(--white);
 }
+
 a.card:hover > * {
   color: var(--white);
 }
+
 a.card:hover {
   background: var(--primary);
+}
+
+.container.column {
+  columns: auto 2;
+}
+
+.section-head {
+  column-span: all;
+}
+
+.section-img {
+  filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
+}
+
+.f-left {
+  float: left;
+  margin-right: 30px;
+}
+
+.f-right {
+  float: right;
+  margin-left: 30px;
+}
+
+.title {
+  font: normal 24px/1.2 Neucha, sans-serif;
+  color: var(--dark-50);
+  margin: 0;
+}
+
+.description {
+  font: normal 34px/1.2 Neucha, sans-serif;
+  margin-top: 30px;
+}
+
+.label {
+  column-span: all;
+  font: bold 14px/1.2 OpenSans, sans-serif;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--brown);
+  padding: 5px 10px;
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
