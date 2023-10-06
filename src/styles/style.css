@@ -24,14 +24,19 @@
   font-weight: normal;
 }
 
+/* тестовый режим */
+
+/* * {
+  border: #1085c5 dotted 3px;
+} */
+
+/* тестовый режим */
+
 body {
   margin: 0;
-}
-
-.text {
   font-size: 16px;
   line-height: 1.6em;
-  color: #2a2626;
+  color: var(--dark);
   font-family: OpenSans, sans-serif;
 }
 
@@ -41,6 +46,7 @@ h3 {
   font-family: Neucha, sans-serif;
   font-weight: normal;
   line-height: 1.2em;
+  color: var(--dark);
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -60,9 +66,12 @@ h3 {
 section {
   padding-top: 100px;
   padding-bottom: 100px;
-  display: flex;
-  justify-content: center;
   position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1110px;
 }
 
 section::before {
@@ -71,34 +80,83 @@ section::before {
   top: 0;
   width: 100%;
   height: 100%;
-  background: url("../assets/images/background.png");
-  background-color: var(--brown);
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.1;
   z-index: -200;
+  background: url("../assets/images/background.png") top/cover no-repeat;
+  opacity: 0.1;
 }
 
-section.video-section::before {
-  background: var(--white);
+section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -300;
 }
 
-#navigation::before {
-  background: var(--dark-primary);
-  opacity: 1;
+.light::after {
+  background-color: var(--light);
 }
 
-.container {
-  max-width: 1110px;
+.dark::after {
+  background-color: var(--brown);
+}
+
+.white::before {
+  background: none;
+}
+
+.white::after {
+  background-color: var(--white);
+}
+
+.primary-dark::before {
+  background: none;
+}
+
+.primary-dark::after {
+  background-color: var(--dark-primary);
 }
 
 .primary-text {
   color: var(--primary);
 }
 
+.column {
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.column p {
+  margin-top: 0;
+}
+
+.column-side {
+  break-inside: avoid;
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* локальные стили */
+
 .header {
   position: relative;
   margin-bottom: 185px;
+}
+
+/* костыль */
+.header-columns {
+  margin-bottom: 0;
+  padding-top: 16px;
 }
 
 .header img {
@@ -109,34 +167,7 @@ section.video-section::before {
   z-index: -100;
 }
 
-.column {
-  column-count: 2;
-  column-gap: 30px;
-}
-
-.column .text {
-  margin-top: 0;
-}
-
-.column-side {
-  break-inside: avoid;
-}
-
-a {
-  text-decoration: none;
-}
-
-.btn {
-  cursor: pointer;
-  display: inline-block;
-  padding: 12px 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: var(--primary);
-  color: var(--white);
-}
-
-.btn.text.mt-40 {
+.btn.mt-40 {
   margin-top: 40px;
 }
 
@@ -144,7 +175,7 @@ a {
   text-align: center;
 }
 
-.video-section .text {
+.aria-author {
   margin-top: 27px;
   margin-bottom: 30px;
 }
@@ -168,23 +199,13 @@ a {
   justify-content: space-between;
 }
 
-.navigation-header {
-  font-size: 52px;
-}
-
-.count {
-  color: var(--dark-primary);
-  margin-bottom: 40px;
-  font-size: 64px;
-  font-family: Neucha, sans-serif;
-  line-height: 1;
-}
-
 .card {
   display: block;
   box-sizing: border-box;
   width: 350px;
   margin-bottom: 20px;
+  text-decoration: none;
+  color: var(--dark);
 }
 
 .card:not(:first-child) {
@@ -192,16 +213,25 @@ a {
   background: var(--white);
 }
 
+.navigation-header.card {
+  font-size: 52px;
+  font-weight: normal;
+  color: var(--white);
+}
+
+.count {
+  margin-bottom: 40px;
+  font: 64px/1 Neucha, sans-serif;
+  color: var(--dark-primary);
+}
+
+/* костыль */
 a.card:hover > * {
   color: var(--white);
 }
 
 a.card:hover {
   background: var(--primary);
-}
-
-.container.column {
-  columns: auto 2;
 }
 
 .section-head {
@@ -224,22 +254,41 @@ a.card:hover {
 
 .title {
   font: normal 24px/1.2 Neucha, sans-serif;
-  color: var(--dark-50);
   margin: 0;
 }
 
-.description {
+.light .title {
+  color: var(--dark-50);
+}
+
+.dark .title {
+  color: var(--white-50);
+}
+
+.section-head .description {
   font: normal 34px/1.2 Neucha, sans-serif;
   margin-top: 30px;
+}
+
+.dark h2, .dark p {
+  color: var(--white);
 }
 
 .label {
   column-span: all;
   font: bold 14px/1.2 OpenSans, sans-serif;
   text-transform: uppercase;
-  color: var(--white);
-  background: var(--brown);
   padding: 5px 10px;
   margin-top: 100px;
   margin-bottom: 20px;
+}
+
+.light .label {
+  color: var(--white);
+  background: var(--brown);
+}
+
+.dark .label {
+  color: var(--brown);
+  background: var(--white);
 }
