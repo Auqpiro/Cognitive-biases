@@ -163,7 +163,8 @@
             <div class="container">
                 <div class="column">
                     <div class="section-head">
-                        <img class="section-img f-right" src="./assets/images/4.png" alt="Гиперболическое обесценивание">
+                        <img class="section-img f-right" src="./assets/images/4.png"
+                            alt="Гиперболическое обесценивание">
                         <p class="title">Когнитивные искажения</p>
                         <h2>Гиперболическое обесценивание</h2>
                         <p class="description">Вы гонитесь за немедленной маленькой выгодой и игнорируете более крупную,
@@ -189,25 +190,34 @@
                         <p class="description">Неправильно рассчитывать время необходимое для завершения задачи.</p>
                     </div>
                     <h3 class="label">Как проявляется</h3>
-                    <p>Одно из искажений, которое должно признать большинство из нас. И менеджеры проекта, и сами пользователи продукта — все склонны ставить сроки, в которые невозможно закончить запланированное.</p>
+                    <p>Одно из искажений, которое должно признать большинство из нас. И менеджеры проекта, и сами
+                        пользователи продукта — все склонны ставить сроки, в которые невозможно закончить
+                        запланированное.</p>
                     <p>Это отлично выражается в старом афоризме:</p>
-                    <p>Первые 90% готового кода отнимают первые 90% времени разработки. Оставшиеся 10% отнимают вторые 90% времени разработки.</p>
+                    <p>Первые 90% готового кода отнимают первые 90% времени разработки. Оставшиеся 10% отнимают вторые
+                        90% времени разработки.</p>
                 </div>
             </div>
         </section>
-        <!-- section>img+p.title{Когнитивные искажения}+h2+h3+.column>.label{Как проявляется}+p -->
         <footer class="white">
-            <div>
-                <h3>Хотите узнать больше? Подпишитесь на обновления</h3>
-                <form action="#">
-                    <label for=""></label>
-                    <input type="text">
-                    <button><img src="./assets/images/send.svg" alt="Отправить"></button>
+            <div class="form-container column">
+                <h3>Хотите узнать больше?<br>Подпишитесь на обновления</h3>
+                <form class="column-side" action="#">
+                    <label for="email">Электронная почта</label>
+                    <div class="input-group">
+                        <input id="email" type="email" name="email" placeholder="Ваша электронная почта">
+                        <button type="submit" class="btn"></button>
+                    </div>
+                    <div class="rools">Подписываясь, вы принимаете <a href="#">правила сервиса</a></div>
                 </form>
             </div>
-            <p>© 2023 Иван Коновалов</p>
-            <p>По материалам статьи <a href="#">Yash Ranadive Cognitive Biases in Programming</a></p>
-            <a href="#">Курсы программирования Hexlet</a>
+            <div class="contacts">
+                <p>© 2023 Иван Коновалов</p>
+                <p>По материалам статьи <a
+                        href="https://medium.com/hackernoon/cognitive-biases-in-programming-5e937707c27b">Yash
+                        Ranadive Cognitive Biases in Programming</a></p>
+                <a href="https://ru.hexlet.io/">Курсы программирования Hexlet</a>
+            </div>
         </footer>
     </main>
 </body>

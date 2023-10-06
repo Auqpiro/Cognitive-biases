@@ -292,3 +292,79 @@ a.card:hover {
   color: var(--brown);
   background: var(--white);
 }
+
+footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.form-container {
+  box-sizing: border-box;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding-left: 55px;
+  padding-right: 55px;
+  background: var(--dark-primary);
+  color: var(--white);
+}
+
+.form-container h3 {
+  color: var(--white);
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+form {
+  padding-top: 38px;
+}
+
+.input-group {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 9px;
+}
+
+label {
+  font-size: 18px;
+}
+
+input {
+  flex-grow: 1;
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  padding: 15px;
+  border: none;
+}
+
+button {
+  flex-shrink: 0;
+  width: 70px;
+  height: 50px;
+  position: relative;
+  border: none;
+}
+
+button::before {
+  position: absolute;
+  content: url("../assets/images/send.svg");
+  transform: translateX(-50%);
+  top: 25%;
+}
+
+.rools {
+  font-size: 12px;
+}
+
+/* костыль */
+.rools > a {
+  color: var(--white);
+}
+
+.contacts {
+  margin: 0 auto;
+  font-size: 14px;
+  column-span: all;
+  text-align: center;
+  margin-top: 60px;
+}
